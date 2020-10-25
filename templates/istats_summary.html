@@ -1,0 +1,201 @@
+<{include file="db:istats_index.html"}>
+<center><font size="2" ><a href="#per_hour"><{$lang_per_hour}></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#hour"><{$lang_by_today_hour}></a></font></center>
+
+<br><br>
+
+<center>
+	<table width="100%" cellspacing="0" cellpadding="5" border="0" class="statstable" align="center">
+	  <tr>
+	    <td align="center" valign="top">
+		  <table width="600" border="0" cellspacing="1" cellpadding="0" class="head" align="center">
+		    <tr>
+		      <td>
+		        <table width="100%" border="0" cellspacing="1" cellpadding="4" class="statstable" align="center">
+	                  <tr class="head">
+	                    <td colspan="4" align="center"><b><font size="3"><{$lang_stats_info}></font></b></td>
+	    		  </tr>
+			  <tr class="even">
+	      		    <td align="center" width="28%"><{$lang_total_visits}></td>
+	      		    <td align="center" width="22%"><{$total}></td>
+	      		    <td align="center" width="28%"><{$lang_now}></td>
+	      		    <td align="center" nowrap width="22%"><{$date_now}></td>
+	    		  </tr>
+			  <tr class="odd">
+	    		    <td align="center" width="28%"><{$lang_today}></td>
+	      		    <td align="center" width="22%"><{$today}></td>
+	      		    <td align="center" width="28%"><{$lang_ave_day}></td>
+	      		    <td align="center" width="22%"><{$ava_day}></td>
+	  		  </tr>
+			  <tr class="even">
+	      		    <td align="center" width="28%"><{$lang_this_week}></td>
+	      		    <td align="center" width="22%"><{$this_week}></td>
+		  	    <td align="center" width="28%"><{$lang_ave_week}></td>
+	      		    <td align="center" width="22%"><{$ava_week}></td>
+	  		  </tr>
+	  		  <tr class="odd">
+	      		    <td align="center" width="28%"><{$lang_this_mth}></td>
+	      		    <td align="center" width="22%"><{$this_mth}></td>
+		  	    <td align="center" width="28%"><{$lang_ave_mth}></td>
+	      		    <td align="center" width="22%"><{$ava_mth}></td>
+	  		  </tr>
+	  		  <tr class="even">
+	      		    <td align="center" width="28%"><{$lang_total_days}></td>
+	      		    <td align="center" width="22%"><{$days}></td>
+		  	    <td align="center" width="28%"><{$lang_ave_hour}></td>
+	      		    <td align="center" width="22%"><{$ava_hour}></td>
+	  		  </tr>
+	  		  <tr class="odd">
+	      		    <td align="center" width="28%"><{$lang_max_daycount}></td>
+	      		    <td align="center" width="22%"><{$max_daycount}></td>
+		  	    <td align="center" width="28%"><{$lang_max_date}></td>
+	      		    <td align="center" width="22%"><{$max_date}></td>
+	  		  </tr>
+	  		  <tr class="even">
+	      		    <td align="center" width="28%"><{$lang_max_weekcount}></td>
+	      		    <td align="center" width="22%"><{$max_weekcount}></td>
+		  	    <td align="center" width="28%"><{$lang_max_week}></td>
+	      		    <td align="center" width="22%"><{$max_week}></td>
+	  		  </tr>
+	  		  <tr class="odd">
+	      		    <td align="center" width="28%"><{$lang_max_mthcount}></td>
+	      		    <td align="center" width="22%"><{$max_mthcount}></td>
+		  	    <td align="center" width="28%"><{$lang_max_mth}></td>
+	      		    <td align="center" width="22%"><{$max_mth}></td>
+	  		  </tr>
+	  		</table>
+	  	      </td>
+	  	    </tr>
+	          </table>
+	    </td>
+	  </tr>
+	</table>
+
+
+	<br><br><hr>
+	<a name="per_hour"></a>
+	<br><br>
+
+
+	<table width="600" cellspacing="0" cellpadding="5" border="0" align="center">
+	  <tr>
+	    <td align="center" valign="top">
+	      <table width="100%" cellspacing="0" cellpadding="5" border="0" class="statstable" align="center">
+		<tr>
+		  <td align="center" valign="top">
+		    <table width="380" border="0" cellspacing="1" cellpadding="0" class="head">
+		      <tr>
+			<td>
+			  <table width="100%" border="0" cellspacing="1" cellpadding="4" class="statstable">
+			    <tr class="head">
+			      <td colspan="4" align="center"><b><font size="3"><{$lang_per_hour}></font></b></td>
+			    </tr>
+			    <{foreach item=phi from=$hour_info}>
+				<{if $phi.hour is even}>
+			    <tr class="<{cycle values="odd,even"}>" valign="middle">
+			      <td width="25%" nowrap align="center"><{$phi.hour}>:00&nbsp;-&nbsp;<{$phi.hour}>:59</td>
+			      <td align="center" width="28%"><{$phi.percent}>%</td>
+				<{else $phi.hour is odd}>
+        		      <td width="25%" nowrap align="center"><{$phi.hour}>:00&nbsp;-&nbsp;<{$phi.hour}>:59</td>
+			      <td align="center" width="28%"><{$phi.percent}>%</td>
+			    </tr>
+				<{/if}>
+			    <{/foreach}>
+			  </table>
+			</td>
+		      </tr>
+		    </table>
+		  </td>
+		</tr>
+	      </table>
+	    </td>
+	    <td class="statsfore" align="center" valign="top">
+	      <table width="200" border="0" cellspacing="1" cellpadding="0" class="head">
+		<tr>
+		  <td>
+		    <table width="100%" border="0" cellspacing="1" cellpadding="2">
+		      <tr class="head">
+			<td colspan="1" align="center"><b><font size="3"><{$lang_forecast}></font></b></td>
+		      </tr>
+		      <tr class="even">
+			<td align="center" class="statstable"><{$lang_ave}>&nbsp;<b><{$cur_percent}>%</b>&nbsp;<{$lang_daily_visit}>&nbsp;<b><{$date_daily}></b>.<br><{$lang_bas_nbr}>&nbsp;<b><{$daycount}></b>&nbsp;<{$lang_so_far}>&nbsp;<b><{$today_hits}></b>&nbsp;<{$lang_page_view}></td>
+		      </tr>
+		    </table>
+		  </td>
+		</tr>
+	      </table>
+	    </td>
+	  </tr>
+	</table>
+
+	<br><br><hr>
+	<a name="hour"></a>
+	<br><br>
+
+	<table width="100%" cellspacing="0" cellpadding="5" border="0" class="statstable" align="center">
+	  <td>
+	    <td align="center" valign="top">
+	      <table width="625" border="0" cellspacing="1" cellpadding="4" class="head" align="center">
+		<tr>
+		  <td>
+		    <table class="stats" width="625" border="0" cellspacing="1" cellpadding="4" background="include/gd.php" align="center">
+		      <tr>
+			<td colspan="25" align="center"><b><font size="4"><{$lang_by_today_hour}></font></b></td>
+		      </tr>
+		      <tr height="220">
+			<td  width="25">&nbsp;</td>
+			  <{foreach item=perc from=$hour_percent}>
+			<td class="statsimg" align="center" width="25" valign="bottom">
+			  <img hspace="0" src="images/h_green.gif" width="15" height="<{$perc.percent}>">
+			</td>
+			  <{/foreach}>
+		      </tr>
+		    </table>
+		  </td>
+		</tr>
+		<tr>
+		  <td class="statswords">
+		    <table class="statswords" width="625" border="0" cellspacing="0" cellpadding="0">
+		      <tr>
+			<td class="statswords"> <{$lang_hr_hour}> </td>
+			<td class="statswords">00h</td>
+			<td class="statswords">01h</td>
+			<td class="statswords">02h</td>
+			<td class="statswords">03h</td>
+			<td class="statswords">04h</td>
+			<td class="statswords">05h</td>
+			<td class="statswords">06h</td>
+			<td class="statswords">07h</td>
+			<td class="statswords">08h</td>
+			<td class="statswords">09h</td>
+			<td class="statswords">10h</td>
+			<td class="statswords">11h</td>
+			<td class="statswords">12h</td>
+			<td class="statswords">13h</td>
+			<td class="statswords">14h</td>
+			<td class="statswords">15h</td>
+			<td class="statswords">16h</td>
+			<td class="statswords">17h</td>
+			<td class="statswords">18h</td>
+			<td class="statswords">19h</td>
+			<td class="statswords">20h</td>
+			<td class="statswords">21h</td>
+			<td class="statswords">22h</td>
+			<td class="statswords">23h</td>
+		      </tr>
+		      <tr>
+			<td class="statswords"> <{$lang_hr_visits}> </td>
+			  <{foreach item=count from=$hourinfo}>
+			<td width="25">
+			  <div class="statswords" align="center"><{$count.info}></div>
+			</td>
+			  <{/foreach}>
+		      </tr>
+		    </table>
+		  </td>
+		</tr>
+	      </table>
+	    </td>
+	  </td>
+	</table>
+</center>
+<{include file="db:istats_footer.html"}>

@@ -1,0 +1,190 @@
+<{include file="db:istats_index.html"}>
+<div align="center" class="statsdiv"><font size="2" ><a href="#browser"><{$lang_by_browser}></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#os"><{$lang_by_os}></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#sw"><{$lang_sw_sw}></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#sc"><{$lang_sc_sc}></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#host"><{$lang_by_host}></a></font></div>
+
+
+  <br><br>
+  <a name="browser"></a>
+  <br><br>
+
+
+<center>
+<table width="100%" cellspacing="0" cellpadding="5" border="0" class="statstable" align="center">
+  <tr>
+    <td align="center" valign="top">
+	<table width="600" border="0" cellspacing="1" cellpadding="0" class="head">
+	  <tr>
+	    <td>
+	      <table width="100%" border="0" cellspacing="1" cellpadding="4" class="statstable">
+		<tr class="head">
+		  <td colspan="3" align="center"><b><font size="3"><{$lang_by_browser}></font></b>
+		  </td>
+		</tr>
+		<tr class="head">
+		  <td width="23%" align="center"><b><{$lang_bro_bro}></b></td>
+		  <td width="5%">&nbsp;</td>
+		  <td width="72%">&nbsp;</td>
+		</tr>
+		<{foreach item=bro from=$info_browser}>
+		<tr class="<{cycle values="even,odd"}>" valign="center">
+		  <td width="23%" nowrap align="left"><{$bro.no}>)&nbsp;<{$bro.browser}></td>
+		  <td width="5%" align="right"><{$bro.count}></td>
+		  <td width="72%" nowrap align="left"><img src="images/brown.gif" width="<{$bro.brobar}>" height="10">&nbsp;<{$bro.percent}>%</td>
+		</tr>
+		<{/foreach}>
+	      </table>
+	    </td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>
+
+
+  <br><br><hr>
+  <a name="os"></a>
+  <br><br>
+
+
+<table width="100%" cellspacing="0" cellpadding="5" border="0" class="statstable" align="center">
+  <tr>
+    <td align="center" valign="top">
+	<table width="600" border="0" cellspacing="1" cellpadding="0" class="head">
+	  <tr>
+	    <td>
+	      <table width="100%" border="0" cellspacing="1" cellpadding="4" class="statstable">
+		<tr class="head">
+		  <td colspan="3" align="center"><b><font size="3"><{$lang_by_os}></font></b>
+		  </td>
+		</tr>
+		<tr class="head">
+		  <td width="23%" align="center"><b><{$lang_os_os}></b></td>
+		  <td width="5%">&nbsp;</td>
+		  <td width="72%">&nbsp;</td>
+		</tr>
+		<{foreach item=os from=$info_os}>
+		<tr class="<{cycle values="even,odd"}>" valign="center">
+		  <td width="23%" nowrap align="left"><{$os.no}>)&nbsp;<{$os.os}></td>
+		  <td width="5%" align="right"><{$os.count}></td>
+		  <td width="72%" nowrap align="left"><img src="images/gold.gif" width="<{$os.osbar}>" height="10">&nbsp;<{$os.percent}>%</td>
+		</tr>
+		<{/foreach}>
+	      </table>
+	    </td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>
+
+
+  <br><br><hr>
+  <a name="sw"></a>
+  <br><br>
+
+
+<table width="100%" cellspacing="0" cellpadding="5" border="0" class="statstable" align="center">
+  <tr>
+    <td align="center" valign="top">
+	<table width="600" border="0" cellspacing="1" cellpadding="0" class="head">
+	  <tr>
+	    <td>
+	      <table width="100%" border="0" cellspacing="1" cellpadding="4" class="statstable">
+		<tr class="head">
+		  <td colspan="3" align="center"><b><font size="3"><{$lang_sw_sw}></font></b>
+		  </td>
+		</tr>
+		<tr class="head">
+		  <td width="23%" align="center"><b><{$lang_sw_sw}></b></td>
+		  <td width="5%">&nbsp;</td>
+		  <td width="72%">&nbsp;</td>
+		</tr>
+		<{foreach item=sw from=$info_sw}>
+		<tr class="<{cycle values="even,odd"}>" valign="center">
+		  <td width="23%" nowrap align="left"><{$sw.no}>)&nbsp;<{$sw.width}></td>
+		  <td width="5%" align="right"><{$sw.count}></td>
+		  <td width="72%" nowrap align="left"><img src="images/blue.gif" width="<{$sw.swbar}>" height="10">&nbsp;<{$sw.percent}>%</td>
+		</tr>
+		<{/foreach}>
+	      </table>
+	    </td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>
+
+
+  <br><br><hr>
+  <a name="sc"></a>
+  <br><br>
+
+
+<table width="100%" cellspacing="0" cellpadding="5" border="0" class="statstable" align="center">
+  <tr>
+    <td align="center" valign="top">
+	<table width="600" border="0" cellspacing="1" cellpadding="0" class="head">
+	  <tr>
+	    <td>
+	      <table width="100%" border="0" cellspacing="1" cellpadding="4" class="statstable">
+		<tr class="head">
+		  <td colspan="3" align="center"><b><font size="3"><{$lang_sc_sc}></font></b>
+		  </td>
+		</tr>
+		<tr class="head">
+		  <td width="23%" align="center"><b><{$lang_sc_sc}></b></td>
+		  <td width="5%">&nbsp;</td>
+		  <td width="72%">&nbsp;</td>
+		</tr>
+		<{foreach item=sc from=$info_sc}>
+		<tr class="<{cycle values="even,odd"}>" valign="center">
+		  <td width="23%" align="left" nowrap><{$sc.no}>)&nbsp;<{$sc.color}></td>
+		  <td width="5%" align="right"><{$sc.count}></td>
+		  <td width="72%" nowrap align="left"><img src="images/purple.gif" width="<{$sc.scbar}>" height="10">&nbsp;<{$sc.percent}>%</td>
+		</tr>
+		<{/foreach}>
+	      </table>
+	    </td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>
+
+
+  <br><br><hr>
+  <a name="host"></a>
+  <br><br>
+
+
+<table width="100%" cellspacing="0" cellpadding="5" border="0" class="statstable" align="center">
+  <tr>
+    <td align="center" valign="top">
+	<table width="600" border="0" cellspacing="1" cellpadding="0" class="head">
+	  <tr>
+	    <td>
+	      <table width="100%" border="0"' cellspacing="1" cellpadding="4" class="statstable">
+		<tr class="head">
+		  <td colspan="3" align="center"><b><font size="3"><{$lang_by_host}></font></b>
+		  </td>
+		</tr>
+		<tr class="head">
+		  <td width="28%" align="center"><b><{$lang_host_host}></font></b></td>
+		  <td width="5%">&nbsp;</td>
+		  <td width="67%">&nbsp;</td>
+		</tr>
+		<{foreach item=host from=$info_host}>
+		  <tr class="<{cycle values="even,odd"}>" valign="center">
+		  <td width="28%" align="left" nowrap><{$host.no}>)&nbsp;<{$host.hostname}></td>
+		  <td width="5%" align="right"><{$host.count}></td>
+		  <td width="67%" align="left" nowrap><img src="images/red.gif" width="<{$host.hostbar}>" height="10">&nbsp;<{$host.percent}>%</td>
+		</tr>
+		<{/foreach}>
+	      </table>
+	    </td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>
+</center>
+<{include file="db:istats_footer.html"}>

@@ -1,0 +1,165 @@
+Mise à jour du sam jun 12 23:21:56 CEST 2004
+
+  Version 2.1 incluant les templates smarty
+  
+  
+Updated sam jun 12 23:21:56 CEST 2004
+
+ - Version 2.1 smarty templates included
+
+ - Le bloc compteur est configurable :
+	- nombre de chiffres (images) à afficher
+	- répertoire d'images à utiliser
+	- montrer ou non l'avatar du membre
+
+ - Le bloc Web stats est configurable :
+	- sélection du format de la date (FR or US)
+
+ - Le module Istats a maintenant une partie admin :
+	- Préférences:
+		- sélection du format de la date (FR or US)
+		- vous pouvez choisir le nombre de 'requested pages' à afficher
+		- vous pouvez choisir le nombre de 'hostnames' à afficher
+		- vous pouvez choisir le nombre de 'referers' à afficher
+	- Cookie:
+		- vous pouvez définir la durée de vie de votre cookie
+		  Attention : cette option utilise un fichier spécifique (config.php dans le répertoire cache).
+		  N'oubliez pas les permissions sur le répertoire cache (chmod 777) ainsi que sur le fichier config.php (chmod 666).
+
+   La 'compact policy' P3P est incluse dans le fichier counter.php file avec la chaine de Janmetpet par défaut.
+   Suivez simplement le lien ci-dessous afin d'obtenir la vôtre :
+   http://www.privacycouncil.com/freep3pfix.php
+   
+   Inclus dans ce texte (point numéro 3), la modification pour empêché que l'admin du site ne soit compté par le module (Lucastds).
+-------------------------------------------------------
+
+A faire lors de l'installation du module I-Stats :
+
+1 - Extraire le contenu de l'archive et uploader le tout dans le répertoire modules du site xoops, procéder ensuite à l'installation classique
+    d'un module.
+
+2 - Ajouter dans les fichiers *.css de chaque thème les classes suivantes :
+
+    .statstable { margin:0px; padding:0px; width:auto; font-size: small; font-weight: normal;}
+    .stats { vertical-align: bottom; width:625px; margin:0; border: 0;}
+    .statsimg { vertical-align: bottom; width:25px; text-align:center;}
+    .statsimgweekday { vertical-align: bottom; font-size: small; font-weight: normal;}
+    .statswords { border-width: 0; font-size: x-small; background-color: transparent; font-weight: normal; text-align:center; width:25px;}
+    .statsfore { width: 30%; padding:2px;}
+    .statsdiv { text-align:center; padding:0px;}
+    
+    J'ai ajouté ces quelques classes dans le but d'essayer de garantir le même aspect visuel du module avec la plus part des thèmes de xoops ainsi qu'avec
+    les principaux navigateurs (IE, opera, mozilla, konqueror et galeon).
+    A noter quelques imperfections avec konqueror.
+
+3 - Aller dans chaque fichier theme.html et ajouter dans la partie footer de xoops le code suivant :
+    Exemple issu du thème Default de xoops :
+    
+	      <table width="100%" cellspacing="0">
+	    <tr id="footerbar">
+	      <td><a href="http://www.xoops.org/" target="_blank"><img src="<{$xoops_imageurl}>poweredby.gif" alt="" /></a>
+	        <{if $xoops_isadmin != 1}>
+	          <script type="text/Javascript">
+		  <!--
+		  istat = new Image(1,1);
+		  istat.src = "http://URL_DE_VOTRE_SITE_XOOPS/modules/istats/include/counter.php?sw="+screen.width+"&sc="+screen.colorDepth+"&referer="+escape(document.referer)+"&page="+location.href;
+		  //-->
+		  </script>
+		<{/if}>
+	      </td>
+	    </tr>
+	      </table>
+	</body>
+	</html>
+    
+    Ce code permettra au module de stats d'effectuer les différents comptabilisations.
+
+4 - A noter que pour les possesseurs d'écran ne permettant pas d'aller au-delà d'une résolution de 1024x768, il ne faudra pas afficher les blocs de droite
+    sur la page des stats, sous peine de voir certains tableaux décaler cette colonne.
+    Là aussi, j'ai fait mon possible pour que l'aspect visuel soit le même en 1024x768 et dans les résolutions supérieures.
+    Si toutes fois, quelqu'un de plus calé que moi question css et tableaux arrivait à faire mieux (ce qui ne me semble pas trop difficile),
+    surtout qu'il n'hésite pas à corriger et à m'envoyer les nouveaux fichiers.
+    
+    
+    Sylvain B. webmaster http://123rando.com
+    
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Updated sam jun 12 23:21:56 CEST 2004
+
+ - Version 2.1 smarty templates included
+
+ - Counter block with configurable options:
+	- number of graphical numbers to display
+	- directory to use for graphics
+	- avatar member to show or not
+
+ - Web stats block now include option:
+	- selectable date format (FR or US)
+
+ - Istats module has now an admin section:
+	- Preferences:
+		- selectable date format (FR or US)
+		- you can choose the number of 'requested pages' to display
+		- you can choose the number of 'hostnames' to display
+		- you can choose the number of 'referers' to display
+	- Cookie:
+		- you can define your cookie's lifetime duration
+		  Warning: the option use a specific file (config.php in the cache directory).
+		  Don't forget to chmod the cache directory to 777 and the config.php file to 666.
+
+   P3P compact policy is included in the counter.php file with Janmetpet's string.
+   Just follow the link below to obtain yours:
+   http://www.privacycouncil.com/freep3pfix.php
+   
+   Included into this text (point number 3), modification to prevent admin to be counted by the module (Lucastds).
+-------------------------------------------------------
+
+To do during the I-Stats module installation: 
+
+1 - Extract the contents from the archive and upload it in the modules directory of your xoops site, then proceed to a traditional installation of a module. 
+
+2 - Add in the *.css files of each theme the following classes: 
+
+    .statstable { margin:0px; padding:0px; width:auto; font-size: small; font-weight: normal;}
+    .stats { vertical-align: bottom; width:625px; margin:0; border: 0;}
+    .statsimg { vertical-align: bottom; width:25px; text-align:center;}
+    .statsimgweekday { vertical-align: bottom; font-size: small; font-weight: normal;}
+    .statswords { border-width: 0; font-size: x-small; background-color: transparent; font-weight: normal; text-align:center; width:25px;}
+    .statsfore { width: 30%; padding:2px;}
+    .statsdiv { text-align:center; padding:0px;}
+
+    I added these classes trying to guaranteeing the same visual aspect of the module with the majority of the xoops themes 
+    and also with these browsers (IE, opera, mozilla, konqueror and galeon). 
+    Some imperfections with konqueror. 
+
+3 - Go in each theme.html file and add in the footer part of xoops the following code: 
+    Example resulting from the Default xoops theme:
+     
+	      <table width="100%" cellspacing="0">
+	    <tr id="footerbar">
+	      <td><a href="http://www.xoops.org/" target="_blank"><img src="<{$xoops_imageurl}>poweredby.gif" alt="" /></a>
+	        <{if $xoops_isadmin != 1}>
+	          <script type="text/Javascript">
+		  <!--
+		  istat = new Image(1,1);
+		  istat.src = "http://YOUR_XOOPS_SITE_URL/modules/istats/include/counter.php?sw="+screen.width+"&sc="+screen.colorDepth+"&refer="+escape(document.referrer)+"&page="+location.href;
+		  //-->
+		  </script>
+		<{/if}>
+	      </td>
+	    </tr>
+	      </table>
+	</body>
+	</html>    
+
+    This code will allow the stats module to count. 
+
+4 - It should be noted that for the owners of 1024x768 screen, you should not show right blocks on the I-Stats page because it'll broke your screen.  
+    There too, I makes my possible so that visual style is the same one in 1024x768 and in the higher resolutions. 
+    If somebody moreover fixed in css and tables questions managed to do better things than me (what does not seem too difficult to me), 
+    I say: don't hesitate to correct it and to send me the new files. 
+
+
+Sylvain B webmaster http://123rando.com

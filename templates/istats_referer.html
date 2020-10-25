@@ -1,0 +1,38 @@
+<{include file="db:istats_index.html"}>
+  <br><br>
+  <a name="referer"></a>
+  <br><br>
+<center>
+<table width="100%" cellspacing="0" cellpadding="5" border="0" class="statstable" align="center">
+  <tr>
+    <td align="center" valign="top">
+	  <table width="600" border="0" cellspacing="1" cellpadding="0" class="head">
+	    <tr>
+	      <td>
+	        <table width="100%" border="0" cellspacing="1" cellpadding="4" class="statstable">
+              <tr class='head'>
+	            <td colspan="3" align="center">
+	              <b><font size="3"><{$lang_by_ref}></font></b>
+	            </td>
+	          </tr>
+              <tr>
+                <td width="8%" align="center" nowrap class="head"><b><{$lang_ref_visits}></b></td>
+                <td width="10%" align="left" class="head"><b><{$lang_ref_percent}></b></td>
+                <td width="82%" align="left" nowrap class="head"><b><{$lang_ref_ref}></b></td>
+              </tr>
+ <{foreach item=ref from=$referer}>
+  <tr class="<{cycle values="even,odd"}>" valign="center">  
+      <td width="8%" align="center"><{$ref.count}></td>
+      <td width="10%" align="right"><{$ref.percent}>%</td>
+      <td width="82%" align="left" nowrap><a href="<{$ref.url}>" target="_blank"><{$ref.url}></a></td>
+    </tr>
+ <{/foreach}>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</center>
+<{include file="db:istats_footer.html"}>

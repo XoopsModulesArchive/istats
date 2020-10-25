@@ -1,0 +1,271 @@
+<{include file="db:istats_index.html"}>
+<div align="center"><font size="2"><a href="#day"><{$lang_by_day}></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#week-day"><{$lang_by_weekday}></a>&nbsp;&nbsp;|&nbsp;&nbsp<a href="#week"><{$lang_by_week}></a>&nbsp;&nbsp;|&nbsp;&nbsp<a href="#mth"><{$lang_by_mth}></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#hour"><{$lang_by_hour}></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#page"><{$lang_by_page}></a></font>
+
+
+  <br><br>
+  <a name="day"></a>
+  <br><br>
+
+
+<table width="100%" cellspacing="0" cellpadding="5" border="0" align="center" class="statstable">
+  <tr>
+    <td align="center" valign="top">
+	  <table width="100%" border="0" cellspacing="1" cellpadding="0" class="head" align="center">
+	    <tr>
+	      <td>
+	        <table width="600" border="0" cellspacing="1" cellpadding="4" class="statstable">
+		  <tr class="head">
+		    <td colspan="4" align="center"><b><font size="3"><{$lang_by_day}></font></b>
+		    </td>
+		  </tr>
+		  <tr class="head">
+		    <td width="12%"><b><center><{$lang_date_date}></center></b></td>
+		    <td width="6%"><b><center><{$lang_date_visits}></center></b></td>
+		    <td width="12%"><b><center><{$lang_date_percent}><center></b></td>
+		    <td width="63%">&nbsp;</td>
+		  </tr>
+		  <{foreach item=dayinf from=$info_day}>
+		  <tr class="<{cycle values="even,odd"}>" valign="center">
+		    <td width="12%" align="center" nowrap><{$dayinf.mth}><{$dayinf.day}></td>
+		    <td width="6%" align="right"><{$dayinf.count}></td>
+		    <td width="12%" align="right"><{$dayinf.percent}>%</td>
+		    <td width="63%"><img src="images/barsunrise.gif" width="<{$dayinf.bar}>" height="10"><img src="images/bargray.gif" width="<{$dayinf.bgbar}>" height="10"></td>
+		  </tr>
+		  <{/foreach}>
+		</table>
+	      </td>
+	    </tr>
+	  </table>
+    </td>
+  </tr>
+</table>
+
+
+  <br><br>
+  <hr>
+  <a name="week-day"></a>
+  <br><br>
+
+
+	  <table width="100%" border="0" cellspacing="1" cellpadding="0" class="head">
+	    <tr>
+	      <td>
+		<table width="100%" border="0" cellspacing="1" cellpadding="4">
+		  <tr class="head">
+		    <td colspan="7" align="center"><b><font size="3"><{$lang_by_weekday}></font></b>
+		    </td>
+		  </tr>
+		  <tr class="head">
+		    <td width="14%"><center><b><{$lang_wd7}></b></center></td>
+		    <td width="14%"><center><b><{$lang_wd1}></b></center></td>
+		    <td width="14%"><center><b><{$lang_wd2}></b></center></td>
+		    <td width="14%"><center><b><{$lang_wd3}></b></center></td>
+		    <td width="14%"><center><b><{$lang_wd4}></b></center></td>
+		    <td width="14%"><center><b><{$lang_wd5}></b></center></td>
+		    <td width="14%"><center><b><{$lang_wd6}></b></center></td>
+		  </tr>
+		  <tr height="190">
+		    <{foreach item=weekdayinf from=$info_week_day}>
+		    <td width="14%" valign="bottom" background="images/bg.bmp" bgcolor="#B8C5E2" class="statsimgweekday" align="center"><center><{$weekdayinf.weekdayperc}>%<br><img src="images/week_bar.gif" width="25" height="<{$weekdayinf.weekdaybar}>"></center></td>
+		    <{/foreach}>
+		  </tr>
+		  <tr class="head">
+		    <{foreach item=weekdayinf from=$info_week_count}>
+		    <td width="14%" align="center"><center><b><{$weekdayinf.count}></b></center></td>
+		    <{/foreach}>
+		  </tr>
+		</table>
+	      </td>
+	    </tr>
+	  </table>
+
+
+  <br><br><hr>
+  <a name="week"></a>
+  <br><br>
+
+
+<table width="100%" align="center" cellspacing="0" cellpadding="5" border="0" class="statstable">
+  <tr>
+    <td align="center" valign="top">
+	  <table width="600" border="0" cellspacing="1" cellpadding="0" class="head">
+	    <tr>
+	      <td>
+	        <table width="100%" border="0" cellspacing="1" cellpadding="4" class="statstable">
+		  <tr class="head">
+		    <td colspan="4" align="center"><b><font size="3"><{$lang_by_week}></font></b>
+		    </td>
+		  </tr>
+		  <tr class="head">
+		    <td width="12%"><center><b><{$lang_week_week}></b></center></td>
+		    <td width="6%"><center><b><{$lang_week_visits}></b></center></td>
+		    <td width="12%"><center><b><{$lang_date_percent}></b></center></td>
+		    <td width="63%">&nbsp;</td>
+		  </tr>
+		  <{foreach item=weekinf  from=$info_week}>
+		  <tr class="<{cycle values="even,odd"}>" valign="center">
+		    <td width="12%" align="center" nowrap>#&nbsp;<{$weekinf.week}>&nbsp;(<{$weekinf.year}>)</td>
+		    <td width="6%" align="right"><{$weekinf.count}></td>
+		    <td width="12%" align="right"><{$weekinf.percent}>&nbsp;%</td>
+		    <td width="63%"><img src="images/barsunrise.gif" width="<{$weekinf.bar}>" height="10"><img src="images/bargray.gif" width="<{$weekinf.bgbar}>" height="10"></td>
+		  </tr>
+		  <{/foreach}>
+	        </table>
+	      </td>
+	    </tr>
+	  </table>
+    </td>
+  </tr>
+</table>
+
+
+  <br><br><hr>
+  <a name="mth"></a>
+  <br><br>
+
+
+<table width="100%" align="center" cellspacing="0" cellpadding="5" border="0" class="statstable">
+  <tr>
+    <td align="center" valign="top">
+	  <table width="600" border="0" cellspacing="1" cellpadding="0" class="head">
+	    <tr>
+	      <td>
+		<table width="100%" border="0" cellspacing="1" cellpadding="4" class="statstable">
+		  <tr class="head">
+		    <td colspan="4" align="center"><b><font size="3"><{$lang_by_mth}></font></b>
+		    </td>
+		  </tr>
+		  <tr class="head">
+		    <td width="12%"><center><b><{$lang_mth_mth}></b></center></td>
+		    <td width="6%"><center><b><{$lang_mth_visits}></b></center></td>
+		    <td width="12%"><center><b><{$lang_date_percent}></b></center></td>
+		    <td width="63%">&nbsp;</td>
+		  </tr>
+		  <{foreach item=mthinf  from=$info_mth}>
+		  <tr class="<{cycle values="even,odd"}>" valign="center">
+		    <td width="12%" align="center" nowrap><{$mthinf.year}>/<{$mthinf.mth}></td>
+		    <td width="6%" align="right"><{$mthinf.count}></td>
+		    <td width="12%" align="right"><{$mthinf.percent}>&nbsp;%</td>
+		    <td width="63%"><img src="images/barsunrise.gif" width="<{$mthinf.bar}>" height="10"><img src="images/bargray.gif" width="<{$mthinf.bgbar}>" height="10"></td>
+		  </tr>
+		  <{/foreach}>
+		</table>
+	      </td>
+	    </tr>
+	  </table>
+    </td>
+  </tr>
+</table>
+
+
+  <br><br><hr>
+  <a name="hour"></a>
+  <br><br>
+
+
+<table width="100%" align="center" cellspacing="0" cellpadding="5" border="0" class="statstable">
+  <tr>
+    <td align="center" valign="top">
+	<table width="600" border="0" cellspacing="1" cellpadding="0" class="head">
+	  <tr>
+	    <td>
+	      <table width="100%" border="0" cellspacing="1" cellpadding="2" align="center" class="statstable">
+		<tr class="head">
+		  <td colspan="25" align="center"><b><font size="3"><{$lang_by_hour}></font></b>
+		  </td>
+		</tr>
+		<tr class="head" height="220" align="center">
+		  <td align="center" width="30" background="images/bg.bmp" bgcolor="#B8C5E2">&nbsp;</td>
+		  <{foreach item=hrperc  from=$img_hour_perc}>
+		  <td width="25" align="center" valign="bottom" background="images/bg.bmp" bgcolor="#B8C5E2" class="statsimg">
+		  <img src="images/h_green.gif" width="15" height="<{$hrperc.imgperc}>">
+		  </td>
+		  <{/foreach}>
+		</tr>
+		<tr>
+		  <td colspan="25">
+		  </td>
+		</tr>
+		<tr class="statswords">
+		  <td class="outer"><{$lang_hr_hour}></td>
+		  <td class="outer">00h</td>
+		  <td class="outer">01h</td>
+		  <td class="outer">02h</td>
+		  <td class="outer">03h</td>
+		  <td class="outer">04h</td>
+		  <td class="outer">05h</td>
+		  <td class="outer">06h</td>
+		  <td class="outer">07h</td>
+		  <td class="outer">08h</td>
+		  <td class="outer">09h</td>
+		  <td class="outer">10h</td>
+		  <td class="outer">11h</td>
+		  <td class="outer">12h</td>
+		  <td class="outer">13h</td>
+		  <td class="outer">14h</td>
+		  <td class="outer">15h</td>
+		  <td class="outer">16h</td>
+		  <td class="outer">17h</td>
+		  <td class="outer">18h</td>
+		  <td class="outer">19h</td>
+		  <td class="outer">20h</td>
+		  <td class="outer">21h</td>
+		  <td class="outer">22h</td>
+		  <td class="outer">23h</td>
+		</tr>
+		<tr class="statswords">
+		  <td class="outer"><{$lang_hr_visits}></td>
+		  <{foreach item=hrperc  from=$hr_perc}>
+		  <td class="statstable">
+		  <div class="outer"><{$hrperc.hrperc}>%</div>
+		  </td>
+		  <{/foreach}>
+		</tr>
+	      </table>
+	    </td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>
+
+
+  <br><br><hr>
+  <a name="page"></a>
+  <br><br>
+
+
+<table width="100%" align="center" cellspacing="0" cellpadding="5" border="0" class="statstable">
+  <tr>
+    <td align="center" valign="top">
+	<table width="600" border="0" cellspacing="1" cellpadding="0" class="head">
+	  <tr>
+	    <td>
+	      <table width="100%" border="0" cellspacing="1" cellpadding="4" class="statstable">
+		<tr class="head">
+                  <td colspan="4" align="center"><b><font size="3"><{$lang_by_page}></font></b>
+		  </td>
+		</tr>
+		<tr class="head">
+		  <td width="44%"><center><b><{$lang_p_page}></b></center></td>
+		  <td width="6%" nowrap><center><b><{$lang_p_visits}></b></center></td>
+		  <td width="6%" nowrap><center><b><{$lang_p_percent}></b></center></td>
+		  <td width="40%">&nbsp;</td>
+		</tr>
+		<{foreach item=pageinf  from=$info_page}>
+		<tr class="<{cycle values="even,odd"}>" valign="center">
+		  <td width="44%" align="left"><a href="<{$pageinf.page}>"><{$pageinf.page}></a>
+		  <td width="6%" align="right"><{$pageinf.count}></td>
+		  <td width="6%" align="right" nowrap><{$pageinf.percent}>&nbsp;%</td>
+		  <td width="40%" align="left" nowrap><img src="images/barsunrise.gif" width="<{$pageinf.bar}>" height="10"><img src="images/bargray.gif" width="<{$pageinf.bgbar}>" height="10"></td>
+		</tr>
+		<{/foreach}>
+	      </table>
+	    </td>
+	  </tr>
+	</table>
+    </td>
+  </tr>
+</table>
+</div>
+<{include file="db:istats_footer.html"}>

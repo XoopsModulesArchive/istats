@@ -1,0 +1,370 @@
+
+<html>
+<head>
+    <title>E-Xoops i-Stats module.</title>
+	<link rel="stylesheet" type="text/css" href="silver.css">
+	<style>
+body {
+	font-size: 11pt;
+	color: black;
+	background-color: #E5E5E5;
+	scrollbar-face-color: #DEE3E7;
+	scrollbar-highlight-color: #FFFFFF;
+	scrollbar-shadow-color: #DEE3E7;
+	scrollbar-3dlight-color: #D1D7DC;
+	scrollbar-arrow-color:  #006699;
+	scrollbar-track-color: #EFEFEF;
+	scrollbar-darkshadow-color: #98AAB1;
+}
+
+/* General font families for common tags */
+font,th,td,p { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; }
+a:link,a:active,a:visited { color : #006699; }
+a:hover		{ text-decoration: underline; color : #DD6900; }
+hr		{ height: 0px; border: solid #D1D7DC 0px; border-top-width: 1px;}
+
+/* This is the border line & background colour round the entire page */
+.bodyline	{ background-color: #FFFFFF; border: 1px #98AAB1 solid; }
+
+/* Header cells - the blue and silver gradient backgrounds */
+th	{
+	color: #006699; font-size: 11px; font-weight : bold;
+	background-color: #D1D7DC; height: 25px;
+	background-image: url(images/cellpic1.gif);
+}
+
+code {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: #006600;
+	background-color: #FAFAFA; border: silver;/* #D1D7DC; */ border-style: dotted;
+	width: 100%;
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+blockquote {
+	font-family: Courier, 'Courier New', sans-serif; font-size: 11px; color: black;
+	background-color: #FAFAFA; border: silver;/* #D1D7DC; */ border-style: dotted;
+/*	width: 100%;*/
+	border-left-width: 1px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px
+}
+
+.title2		{ font-weight: bold; letter-spacing: 1px; color : #006699}
+
+	</style>
+</head>
+<body>
+  <a name="top">
+  <table width="100%" cellspacing="0" cellpadding="10" border="0" align="center">
+    <tr>
+	  <td class="bodyline">
+		<table width="100%" cellspacing="0" cellpadding="0" border="0">
+		  <tr>
+		    <td>
+			  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+		  		<tr>
+		  		  <td width="12%">&nbsp;</td>
+		  		  <td width="76%">
+
+
+<table class="header" width="100%" cellspacing="0" cellpadding="0" border="0">
+<tr><th class="header">E-Xoops i-Stats module.</th></tr></table><p>
+
+<table class="index">
+	<tr><th class="index">&nbsp;&nbsp;Index&nbsp;&nbsp;</th></tr></table>
+	<ul>
+
+
+
+<span class="indexitem"><li><a href="#brief">Brief Description</a></span><br>
+<span class="indexitem"><li><a href="#desc">Description</a></span><br>
+<span class="indexitem"><li><a href="#feature">Features</a></span><br>
+<span class="indexitem"><li><a href="#usage">Usage</a></span><br>
+<span class="indexitem"><li><a href="#install">Installation</a></span><br>
+<span class="indexitem"><li><a href="#faq">FAQ</a></span><br>
+<span class="indexitem"><li><a href="#changelog">Change Log</a></span><br>
+<span class="indexitem"><li><a href="#upgrade">Upgrade Info</a></span><br>
+<span class="indexitem"><li><a href="#version">Version</a></span><br>
+<span class="indexitem"><li><a href="#note">Notes</a></span><br>
+<span class="indexitem"><li><a href="#author">Author</a></span><br>
+<span class="indexitem"><li><a href="#copyright">Copyright</a></span><br>
+<span class="indexitem"><li><a href="#license">License</a></span><br>
+</ul><hr>
+
+<a name="brief"></a><br>
+
+<p><table class="header"><tr><th class="header">&nbsp;&nbsp;Brief Description&nbsp;&nbsp;</th></tr></table><br><ul>
+<span class="contents">E-Xoops i-Stats module.</span><br>
+<span class="contents"> </span><br>
+</ul><p><a href="#top">Top</a><hr><p>
+<a name="desc"></a><br>
+
+<p><table class="header"><tr><th class="header">&nbsp;&nbsp;Description&nbsp;&nbsp;</th></tr></table><br><ul>
+<span class="contents">Records anonymous data as supplied by the users browser (via javascript).</span><br>
+<span class="contents"> </span><br>
+<span class="contents">It displays details of the usual stats plus:<ul></span><br>
+<span class="contents"><li> the pages served</li></span><br>
+<span class="contents"><li> users browser</li></span><br>
+<span class="contents"><li> users OS</li></span><br>
+<span class="contents"><li> users screen size</li></span><br>
+<span class="contents"><li> users colour depth</li></span><br>
+<span class="contents"><li> lists (with count) referers</li></span><br>
+<span class="contents"><li> etc.</li></span><br>
+<span class="contents"></ul></span><br>
+<span class="contents"> </span><br>
+<span class="contents">As of version 1.01 i-Stats can be used as a graphical counter.</span><br>
+<span class="contents"> </span><br>
+<span class="contents">As of version 1.02 there is a block for displaying stats.</span><br>
+<span class="contents"> </span><br>
+</ul><p><a href="#top">Top</a><hr><p>
+<a name="feature"></a><br>
+
+<p><table class="header"><tr><th class="header">&nbsp;&nbsp;Features&nbsp;&nbsp;</th></tr></table><br><ul>
+<span class="contents">Displays Top 50 page requests</span><br>
+<span class="contents">Keeps total count of pages served, including refreshes and revisits</span><br>
+<span class="contents">Keeps a count of visitors per day</span><br>
+<span class="contents">Keeps a count of total visitors</span><br>
+<span class="contents">Keeps track of users hostnames</span><br>
+<span class="contents">Keeps track of referers</span><br>
+<span class="contents">Keeps a count of visitors per week</span><br>
+<span class="contents">Keeps track of users browser</span><br>
+<span class="contents">Keeps track of users OS</span><br>
+<span class="contents">Keeps track of visitors per hour (accumulative)</span><br>
+<span class="contents">Keeps track of visitors per hour (daily)</span><br>
+<span class="contents">Keeps track of visitors per hour (weekly)</span><br>
+<span class="contents">Keeps track of visitors per hour (monthly)</span><br>
+<span class="contents">Keeps track of visitors per month</span><br>
+<span class="contents">Keeps track of visitors screen size ie 800x600</span><br>
+<span class="contents">Keeps track of visitors screen colour depth</span><br>
+<span class="contents">Displays Top 30 Referers</span><br>
+<span class="contents">Can be used as a graphical counter.</span><br>
+<span class="contents">Block for showing stats.</span><br>
+<span class="contents"> </span><br>
+</ul><p><a href="#top">Top</a><hr><p>
+<a name="usage"></a><br>
+
+<p><table class="header"><tr><th class="header">&nbsp;&nbsp;Usage&nbsp;&nbsp;</th></tr></table><br><ul>
+<span class="contents"><div class="title2">i-Stats as a counter</div></span><br>
+<span class="contents">To use i-Stats as a counter, add the following two lines to your themes.php file(s):</span><br>
+<span class="contents"><code></span><br>
+<span class="contents">require_once XOOPS_ROOT_PATH . '/modules/istats/include/function.php';</span><br>
+<span class="contents">$result = CountDays();</span><br>
+<span class="contents"></code></span><br>
+<span class="contents"> </span><br>
+<span class="contents">This gives access to the following figures:</span><br>
+<span class="contents">$result['days'] The number of days that stats are available for</span><br>
+<span class="contents">$result['total'] The total number of visitors</span><br>
+<span class="contents">$result['ava_day'] The average number of visitors per day</span><br>
+<span class="contents">$result['ava_hour'] The average number of visitors per hour</span><br>
+<span class="contents">$result['ava_week'] The average number of visitors per week</span><br>
+<span class="contents">$result['ava_mth'] The average number of visitors per month</span><br>
+<span class="contents">$result['max_date'] The busiest day</span><br>
+<span class="contents">$result['max_daycount'] The number of visits on the busiest day</span><br>
+<span class="contents">$result['today'] The number of visitors so far today</span><br>
+<span class="contents">$result['this_week'] The number of visitors so far this week</span><br>
+<span class="contents">$result['this_mth'] The number of visitors so far this month</span><br>
+<span class="contents">$result['max_week'] The busiest week, as year # week number "2003 # 47"</span><br>
+<span class="contents">$result['max_weekcount'] The number of visitors in the busiest week</span><br>
+<span class="contents">$result['max_mth'] The busiest month</span><br>
+<span class="contents">$result['max_mthcount'] The number of visitors in the busiest month</span><br>
+<span class="contents">$result['totalpages'] The total number of pages served</span><br>
+<span class="contents"> </span><br>
+<span class="contents">For example:</span><br>
+<span class="contents"><code></span><br>
+<span class="contents">There have been &lt;?php echo $result['total']; ?&gt; visitors in the last &lt;?php echo $result['days']; ?&gt; days.</span><br>
+<span class="contents"></code></span><br>
+<span class="contents">produces something like:</span><br>
+<span class="contents"><blockquote>There have been 9876 visitors in the last 100 days</blockquote></span><br>
+<span class="contents">Or you could use CSS to create a different effect, for example, the following:</span><br>
+<span class="contents"><code></span><br>
+<span class="contents">?&gt;</span><br>
+<span class="contents">&lt;span style="font-family: courier; color: white; background: #336699"&gt;</span><br>
+<span class="contents">&lt;?php echo $result['totalpages']; ?&gt;&lt;/span&gt; pages served to</span><br>
+<span class="contents">&lt;span style="font-family: courier; color: white; background: #336699"&gt;</span><br>
+<span class="contents">&lt;?php echo $result['total']; ?&gt;&lt;/span&gt; visitors</span><br>
+<span class="contents">&lt;?php</span><br>
+<span class="contents"></code></span><br>
+<span class="contents">produces something like:<blockquote></span><br>
+<span class="contents"><span style="font-family: courier; color: white; background: #336699"> 009876</span> pages served to <span style="font-family: courier; color: white; background: #336699"> 005678</span> visitors</span><br>
+<span class="contents"></blockquote></span><br>
+<span class="contents"> </span><br>
+<span class="contents"><div class="title2">Display numbers as images</div></span><br>
+<span class="contents"> </span><br>
+<span class="contents">To display the above numbers as graphics add these two lines in addition to the two above:</span><br>
+<span class="contents"><code></span><br>
+<span class="contents">$graphics = num_to_graphics($result['total'], 8, XOOPS_URL . '/modules/istats/images/default','jpg');</span><br>
+<span class="contents">echo $graphics;</span><br>
+<span class="contents"></code></span><br>
+<span class="contents"> </span><br>
+<span class="contents">The first parameter is the number to convert.</span><br>
+<span class="contents">The second parameter is the number of digits (includes leading zeros).</span><br>
+<span class="contents">The third parameter is the path to the image files.</span><br>
+<span class="contents">The fourth parameter is the file extension of the images, e.g. jpg, gif etc.</span><br>
+<span class="contents"> </span><br>
+<span class="contents"> </span><br>
+<span class="contents"><div class="title2">Example graphical counter</div></span><br>
+<span class="contents"> </span><br>
+<span class="contents">Inserted into theme.php function themefooter:</span><br>
+<span class="contents"><code></span><br>
+<span class="contents">require_once XOOPS_ROOT_PATH . '/modules/istats/include/function.php';</span><br>
+<span class="contents">require_once XOOPS_ROOT_PATH . '/modules/istats/include/display.php';</span><br>
+<span class="contents">$result = CountDays();</span><br>
+<span class="contents">$graphics = num_to_graphics($result['total'], 8, XOOPS_URL . '/modules/istats/images/default','jpg');</span><br>
+<span class="contents">echo $graphics;</span><br>
+<span class="contents"></code></span><br>
+<span class="contents">or</span><br>
+<span class="contents"><code></span><br>
+<span class="contents">require_once XOOPS_ROOT_PATH . '/modules/istats/include/function.php';</span><br>
+<span class="contents">require_once XOOPS_ROOT_PATH . '/modules/istats/include/display.php';</span><br>
+<span class="contents">$result = CountDays();</span><br>
+<span class="contents">$graphics = num_to_graphics($result['totalpages'], 8, XOOPS_URL . '/modules/istats/images/default','jpg');</span><br>
+<span class="contents">echo "&lt;div align=\"center\"&gt; $graphics &lt;/div&gt;";</span><br>
+<span class="contents"></code></span><br>
+<span class="contents">or</span><br>
+<span class="contents"><code></span><br>
+<span class="contents">require_once XOOPS_ROOT_PATH . '/modules/istats/include/function.php';</span><br>
+<span class="contents">require_once XOOPS_ROOT_PATH . '/modules/istats/include/display.php';</span><br>
+<span class="contents">$result = CountDays();</span><br>
+<span class="contents">$pages = num_to_graphics($result['totalpages'], 8, XOOPS_URL . '/modules/istats/images/default','jpg');</span><br>
+<span class="contents">$visitors = num_to_graphics($result['total'], 8, XOOPS_URL . '/modules/istats/images/default','jpg');</span><br>
+<span class="contents">echo "&lt;div align=\"center\"&gt; $pages pages served to $visitors visitors &lt;/div&gt;";</span><br>
+<span class="contents"></code></span><br>
+<span class="contents"> </span><br>
+</ul><p><a href="#top">Top</a><hr><p>
+<a name="install"></a><br>
+
+<p><table class="header"><tr><th class="header">&nbsp;&nbsp;Installation&nbsp;&nbsp;</th></tr></table><br><ul>
+<span class="contents">Upload all files to a directory called exoops/modules/istats on your server.</span><br>
+<span class="contents"> </span><br>
+<span class="contents">Run E-Xoops admin, and install 'Web Stats' module.</span><br>
+<span class="contents"> </span><br>
+<span class="contents">Give access to groups as required.</span><br>
+<span class="contents"> </span><br>
+<span class="contents">Add the following code to the footer (Admin, Meta Generator, Footer Settings)</span><br>
+<span class="contents">[ still effective even if theme changed ;-) ]</span><br>
+<span class="contents"><code></span><br>
+<span class="contents">&lt;!-- Add to footer --&gt;</span><br>
+<span class="contents">&lt;script type="text/Javascript"&gt;</span><br>
+<span class="contents">&lt;!--</span><br>
+<span class="contents">istat = new Image(1,1);</span><br>
+<span class="contents">istat.src = "http://yourdomian.com/exoops/modules/istats/counter.php?sw="+screen.width+"&sc="+screen.colorDepth+"&refer="+escape(document.referrer)+"&page="+location.href;</span><br>
+<span class="contents">// --&gt;</span><br>
+<span class="contents">&lt;/script&gt;</span><br>
+<span class="contents">&lt;!-- end --&gt;</span><br>
+<span class="contents"></code></span><br>
+<span class="contents"> </span><br>
+<span class="contents">Do not put a line break in the istat.src line!!</span><br>
+<span class="contents"> </span><br>
+<span class="contents">And don't forget to change 'yourdomain.com' to your sites domain.</span><br>
+<span class="contents"> </span><br>
+</ul><p><a href="#top">Top</a><hr><p>
+<a name="faq"></a><br>
+
+<p><table class="header"><tr><th class="header">&nbsp;&nbsp;FAQ&nbsp;&nbsp;</th></tr></table><br><ul>
+<span class="contents">Q. How do I change the graphic numbers?</span><br>
+<span class="contents">A. Change the third parameter in the line '$graphics = num_to_graphics' to the directory that contains the images you want to display.</span><br>
+<span class="contents"> </span><br>
+<span class="contents">Q. Why did you choose to use i-Stats</span><br>
+<span class="contents">A. For several reasons,</span><br>
+<span class="contents">* It was written in English, making it easy for me to understand,</span><br>
+<span class="contents">* It is well written, both syntactically and logically,</span><br>
+<span class="contents">* Uses database accesses economically,</span><br>
+<span class="contents">* Is designed in a way that does not get bogged down with historical data.</span><br>
+<span class="contents"> </span><br>
+<span class="contents">Q. How do I change the contents of the block?</span><br>
+<span class="contents">A. Comment out the lines in 'blocks/istats_blocks.php' that you dont want to display.</span><br>
+<span class="contents"> </span><br>
+</ul><p><a href="#top">Top</a><hr><p>
+<a name="changelog"></a><br>
+
+<p><table class="header"><tr><th class="header">&nbsp;&nbsp;Change Log&nbsp;&nbsp;</th></tr></table><br><ul>
+<span class="contents">v1.03 Renamed image folders to more accurately describe their contents.</span><br>
+<span class="contents">v1.03 Improved browser detection</span><br>
+<span class="contents">v1.03 Hopefully corrected problem with path names in v1.02 zip file.</span><br>
+<span class="contents">v1.03 Added black on white graphics for numbers, courtesy of <a href="http://www.australianreptilesonline.com">TheBeastMaster</a></span><br>
+<span class="contents">v1.02 Total pages served can be displayed in counter.</span><br>
+<span class="contents">v1.02 Improved browser detection.</span><br>
+<span class="contents">v1.02 Improved OS detection</span><br>
+<span class="contents">v1.02 Fixed problem with truncated referer URL's (change to Installation).</span><br>
+<span class="contents">v1.02 Changed to work with exoops, now uses exoops cookie</span><br>
+<span class="contents">v1.02 Added more OS's</span><br>
+<span class="contents">v1.02 Added more Browsers</span><br>
+<span class="contents">v1.02 Added block for displaying stats</span><br>
+<span class="contents">v1.01 Added display.php to allow i-Stats to be used as a graphical counter</span><br>
+<span class="contents">v1.01 Added $myts functions to clean up referer url?querystring</span><br>
+<span class="contents"> </span><br>
+</ul><p><a href="#top">Top</a><hr><p>
+<a name="upgrade"></a><br>
+
+<p><table class="header"><tr><th class="header">&nbsp;&nbsp;Upgrade Info&nbsp;&nbsp;</th></tr></table><br><ul>
+<span class="contents">v1.01 to v1.02</span><br>
+<span class="contents">Upload the files to your server.</span><br>
+<span class="contents">From E-Xoops Admin update module 'Web Stats'.</span><br>
+<span class="contents"> </span><br>
+<span class="contents">v1.02 to v1.03</span><br>
+<span class="contents">Upload the files to your server.</span><br>
+</ul><p><a href="#top">Top</a><hr><p>
+<a name="version"></a><br>
+
+<p><table class="header"><tr><th class="header">&nbsp;&nbsp;Version&nbsp;&nbsp;</th></tr></table><br><ul>
+<span class="contents">Version 1.03</span><br>
+<span class="contents"> </span><br>
+</ul><p><a href="#top">Top</a><hr><p>
+<a name="note"></a><br>
+
+<p><table class="header"><tr><th class="header">&nbsp;&nbsp;Notes&nbsp;&nbsp;</th></tr></table><br><ul>
+<span class="contents">Only keeps stats (except total of page) for unique visitors, where a unique visitor is defined by the lifetime of the cookie.</span><br>
+<span class="contents"> </span><br>
+<span class="contents">This module is based on:</span><br>
+<span class="contents">PHP i-Stats Version 1.5</span><br>
+<span class="contents">Developed By Sam Tang (sam@hkscript.com)</span><br>
+<span class="contents">License : GNU Public License (GPL)</span><br>
+<span class="contents">Homepage : http://hkscript.com</span><br>
+<span class="contents"> </span><br>
+</ul><p><a href="#top">Top</a><hr><p>
+<a name="author"></a><br>
+
+<p><table class="header"><tr><th class="header">&nbsp;&nbsp;Author&nbsp;&nbsp;</th></tr></table><br><ul>
+<span class="contents">Paul Cooke <paul_sw19@yahoo.com></span><br>
+<span class="contents"><a href="http://?">http://paul-cooke.com</a></span><br>
+<span class="contents"> </span><br>
+</ul><p><a href="#top">Top</a><hr><p>
+<a name="copyright"></a><br>
+
+<p><table class="header"><tr><th class="header">&nbsp;&nbsp;Copyright&nbsp;&nbsp;</th></tr></table><br><ul>
+<span class="contents">Copyright (c) 2003 Paul Cooke <paul_sw19@yahoo.com></span><br>
+<span class="contents"> </span><br>
+</ul><p><a href="#top">Top</a><hr><p>
+<a name="license"></a><br>
+
+<p><table class="header"><tr><th class="header">&nbsp;&nbsp;License&nbsp;&nbsp;</th></tr></table><br><ul>
+<span class="contents">This library is free software; you can redistribute it and/or</span><br>
+<span class="contents">modify it under the terms of the GNU Lesser General Public</span><br>
+<span class="contents">License as published by the Free Software Foundation; either</span><br>
+<span class="contents">version 2.1 of the License, or (at your option) any later version.</span><br>
+<span class="contents"> </span><br>
+<span class="contents">This library is distributed in the hope that it will be useful,</span><br>
+<span class="contents">but WITHOUT ANY WARRANTY; without even the implied warranty of</span><br>
+<span class="contents">MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU</span><br>
+<span class="contents">Lesser General Public License for more details.</span><br>
+<span class="contents"> </span><br>
+<span class="contents">You should have received a copy of the GNU Lesser General Public</span><br>
+<span class="contents">License along with this library; if not, write to the Free Software</span><br>
+<span class="contents">Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA</span><br>
+</ul><p><a href="#top">Top</a><hr><p>
+
+
+
+<p><table class="header" width="100%" cellspacing="0" cellpadding="0" border="0">
+<tr><th class="header">E-Xoops i-Stats module.</th></tr></table>
+
+
+				  </td>
+				  <td width="12%">&nbsp;</td>
+		  		</tr>
+			  </table>
+			</td>
+		  </tr>
+		</table>
+	  </td>
+	</tr>
+  </table>
+</body>
+</html>
